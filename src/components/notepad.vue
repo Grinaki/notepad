@@ -1,10 +1,11 @@
 <template>
     <div class="container">
         <div id="notepad" class="row justify-content-md-center">
+            <h1> Учет товаров </h1>
                 <partNode :part="partItem"  v-for="partItem in this.arrPart" :key="partItem.name"  />
                 <resultItem />
             <div  class="coll-8">
-                <itemEditor/>
+                <itemEditor v-on:sendItem="testFun" />
             </div>
 
         </div>
@@ -42,6 +43,11 @@ export default {
                 }
 
              ]
+        }
+    },
+    methods:{
+        testFun(c){
+            this.arrPart.push(c);
         }
     }
 }

@@ -24,6 +24,7 @@
 <script>
 export default{
     name:'itemEditor',
+    emits: ['sendItem'],
     data(){
         return{
             currentName: '',
@@ -34,7 +35,8 @@ export default{
     },
     methods:{
         addPart(){
-                alert(this.currentName + "\n" + this.currentPrice + "\n" + this.currentCount);
+            
+            this.$emit('sendItem', {name: this.currentName, price: this.currentPrice, count: this.currentCount});
         }
     }
 }
