@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="row g-3 justify-content-end">
-           <div class="col-2">
+           <div class="col-1">
                 <button v-on:click="addPart" type="button" class="btn btn-primary">Добавить</button>
             </div>
         </div>
@@ -39,3 +39,9 @@ export default{
     }
 }
 </script>
+
+<style scoped>
+    button{
+        margin-bottom: 20px;
+    }
+</style>

@@ -1,11 +1,8 @@
 <template>
     <div class="container">
         <div id="notepad" class="row justify-content-md-center">
-        
-            <div  v-for="partItem in this.arrPart" :key="partItem.name" >
-                <partNode :part="partItem" />
-               
-            </div>
+                <partNode :part="partItem"  v-for="partItem in this.arrPart" :key="partItem.name"  />
+                <resultItem />
             <div  class="coll-8">
                 <itemEditor/>
             </div>
@@ -17,11 +14,13 @@
 <script>
 import itemEditor from '@/components/itemEditor';
 import partNode from '@/components/partNode';
+import resultItem from '@/components/resultItem';
 export default {
     name: 'notepad',
     components:{
         itemEditor,
-        partNode
+        partNode,
+        resultItem
     },
     data(){
         return{
@@ -53,6 +52,7 @@ export default {
         border-color:red;
         border-style: solid;
         border-width: 2px;
+        padding-top: 20px;
         
     }
 </style>
