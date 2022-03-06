@@ -4,7 +4,7 @@
                 <partNode :part="partItem"  v-for="partItem in this.arrPart" :key="partItem.name"  />
                 <resultItem />
             <div  class="coll-8">
-                <itemEditor/>
+                <itemEditor v-on:editItem="addPart"/>
             </div>
 
         </div>
@@ -30,19 +30,20 @@ export default {
                     price: 2,
                     count: 3
                 },
-                {
-                    name: "test2",
-                    price: 3,
-                    count: 4
-                },
-                {
-                    name: "test3",
-                    price: 4,
-                    count: 5
-                }
+               
 
-             ]
+             ],
+             count : 1
         }
+    },
+    methods:{
+        addPart(a){
+                this.arrPart.push(a);
+                this.count ++;
+        }
+    },
+    provide: {
+        countALL: 15
     }
 }
 </script>

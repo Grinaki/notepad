@@ -10,7 +10,7 @@
             {{part.price}} 
         </div>
         <div class="alert alert-dark col-2" role="alert">
-           
+           {{sum}}
         </div>
     </div>    
 </template>
@@ -24,6 +24,13 @@ export default{
             price: Number,
             count: Number
         }
+      
+    },
+    computed:{
+       sum(){
+          return 5 + 12;
+       }
+
     }
 }
 </script>

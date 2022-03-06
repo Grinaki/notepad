@@ -4,7 +4,7 @@
         Итого :
     </div>
     <div class="alert alert-primary col-1" role="alert">
-        Количество
+        Количество {{countALL}}
     </div>
     <div id="sum" class="alert alert-primary col-1" role="alert">
             Cумма
@@ -21,7 +21,8 @@ export default {
         return{
 
         }
-    }
+    },
+    inject: ['countALL']
 }
 </script>
 

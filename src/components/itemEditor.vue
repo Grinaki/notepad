@@ -1,4 +1,4 @@
-<template>
+ <template>
 <div class="row justify-content-md-center">
     <div class="row justify-content-md-center">
         <div class="row g-3">
@@ -24,6 +24,7 @@
 <script>
 export default{
     name:'itemEditor',
+    emits:["editItem"],
     data(){
         return{
             currentName: '',
@@ -34,7 +35,7 @@ export default{
     },
     methods:{
         addPart(){
-                alert(this.currentName + "\n" + this.currentPrice + "\n" + this.currentCount);
+                this.$emit("editItem", {name: this.currentName, price: this.currentPrice, count: this.currentCount} );
         }
     }
 }
